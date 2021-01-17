@@ -16,11 +16,12 @@ RUN mv distribution geneweb
 RUN printf "#!/bin/bash\n\
 echo \$HOST_IP > /geneweb/gw/only.txt\n\
 /geneweb/gwsetup \"\$@\" " > /geneweb/run-gwsetup.sh
-RUN cat /geneweb/run-gwsetup.sh
+RUN chmod +x /geneweb/run-gwsetup.sh
+#RUN cat /geneweb/run-gwsetup.sh
 
 # Docker special IP
-ENV HOST_IP 172.17.0.1 
-RUN echo ${HOST_IP} > /geneweb/gw/only.txt
+#ENV HOST_IP 172.17.0.1 
+#RUN echo ${HOST_IP} > /geneweb/gw/only.txt
 
 #EXPOSE 2316
 #EXPOSE 2317
