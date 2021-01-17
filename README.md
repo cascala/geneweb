@@ -2,14 +2,14 @@
 Docker file for gene web
 
 To build:
-docker build . --tag geneweb:v7.0.0
+docker build . --tag geneweb:version-7.0.0
 
 To run the main server locally:
-docker run --publish 2317:2317 -v /home/<user>/gwdb:/geneweb/bases geneweb:v7.0.0 
+docker run --publish 2317:2317 -v /home/<user>/gwdb:/geneweb/bases geneweb:version-7.0.0 
 
 To run the setup server locally:
 (You should only have to do this occasionally, or initially)
-docker run --publish 2316:2316 -v /home/<user>/gwdb:/geneweb/bases geneweb:v7.0.0 bash -c "./gwsetup -lang en"
+docker run --publish 2316:2316 -v /home/<user>/gwdb:/geneweb/bases geneweb:version-7.0.0 bash -c "./gwsetup -lang en"
 
 To stop the running container:
 First get the name of the running container(s), using
