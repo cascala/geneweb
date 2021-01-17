@@ -13,8 +13,8 @@ RUN mv distribution geneweb
 #WORKDIR /geneweb
 
 # Docker special IP
-ENV DOCKER_IP 172.17.0.1 
-RUN echo ${DOCKER_IP} > /geneweb/gw/only.txt
+ENV HOST_IP 172.17.0.1 
+RUN echo ${HOST_IP} > /geneweb/gw/only.txt
 
 #EXPOSE 2316
 #EXPOSE 2317
