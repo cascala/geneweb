@@ -6,7 +6,7 @@ To run the main server locally:
 ``` sh
 docker run --publish 2317:2317 -v /home/<user>/gwdb:/geneweb/bases geneweb:version-7.0.0 
 ```
-You can use another path instead of /home/<user>/gwdb, of course.
+You can use another path instead of /home/`<user`>/gwdb, of course.
 
 To run the setup server locally:
 (You should only have to do this occasionally, or initially)
