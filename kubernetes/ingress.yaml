@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: geneweb
+  namespace: geneweb
+  annotations:
+    # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/limit-connections: '16'
+    nginx.ingress.kubernetes.io/limit-rpm: '512'
+    nginx.ingress.kubernetes.io/enable-modsecurity: "true"
+    nginx.ingress.kubernetes.io/enamble-owasp-core-rules: "true"
+spec:
+  tls:
+  - hosts:
+    - geneweb.esch.nyc
+    secretName: geneweb-tls
+  rules:
+  - host: geneweb.esch.nyc
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: geneweb
+          servicePort: 2317

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gwsetup
+  name: gwsetup
+  namespace: geneweb
+spec:
+  selector:
+    matchLabels:
+      app: gwsetup
+  template:
+    metadata:
+      labels:
+        app: gwsetup
+    spec:
+      containers:
+      - name: gwsetup
+        image: cascala/geneweb:version-7.0.0
+        command: [ "/geneweb/run-gwsetup.sh" ]
+        args: [ "-lang", "en" ]
+        env:
+        - name: HOST_IP
+          value: 10.1.1.1 # This is a 'special' network address, related to guts of docker/k8s implementation
+        #  valueFrom: 
+        #    fieldRef:
+        #      fieldPath: status.hostIP
+        # version-7.0.0 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 2316
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /geneweb/bases
+          subPath: bases
+          name: geneweb
+        - mountPath: /geneweb/geds
+          subPath: geds
+          name: geneweb
+      volumes:
+      - name: geneweb
+        persistentVolumeClaim:
+          claimName: geneweb-pvc
