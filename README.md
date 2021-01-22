@@ -1,5 +1,7 @@
 # geneweb
-Docker file for gene web
+Docker file for geneweb:
+https://github.com/geneweb/geneweb
+
 
 ## TL;DR;
 To run the main server locally:
