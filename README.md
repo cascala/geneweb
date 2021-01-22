@@ -25,7 +25,7 @@ or,
 ``` sh
 docker ps
 ```
-Then use teh docker kill command with the name of the relevant container:
+Then use the docker kill command with the name of the relevant container:
 ``` sh
 docker kill <container name>
 ```
