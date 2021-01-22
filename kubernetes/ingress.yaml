@@ -13,10 +13,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - geneweb.esch.nyc
+    - FILL THIS IN # Sample value: geneweb.mydomain.org
     secretName: geneweb-tls
   rules:
-  - host: geneweb.esch.nyc
+  - host: FILL THIS IN # Sample value: geneweb.mydomain.org
     http:
       paths:
       - path: /
