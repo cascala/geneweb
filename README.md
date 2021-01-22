@@ -23,7 +23,7 @@ or,
 ``` sh
 docker ps
 ```
-Then use with the name of the relevant conatiner:
+Then use teh docker kill command with the name of the relevant container:
 ``` sh
 docker kill <container name>
 ```
@@ -39,7 +39,7 @@ To run an interactive shell inside the container (get the container name as indi
 docker exec -it <container name> /bin/bash
 ```
 
-To publish the image to a registry (only run this on the host which runs a docker registry on port 32000, most people won't need this)
+To publish the image to a registry (most users won't ever need to do this):
 ``` sh
 docker tag geneweb:<version> localhost:32000/geneweb:<version>
 docker push geneweb:32000/geneweb:<version>
