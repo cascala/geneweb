@@ -11,7 +11,7 @@ You can use another path instead of /home/`<user`>/gwdb, of course.
 To run the setup server locally:
 (You should only have to do this occasionally, or initially)
 ``` sh
-docker run --publish 2316:2316 -v /home/<user>/gwdb:/geneweb/bases geneweb:version-7.0.0 bash -c "/geneweb/gwsetup -lang en"
+docker run --publish 2316:2316 -v /home/<user>/gwdb:/geneweb/bases geneweb:version-7.0.0 bash -c "/geneweb/run-gwsetup.sh -lang en"
 ```
 
 To stop the running container:
